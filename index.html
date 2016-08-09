@@ -54,11 +54,17 @@
             }
 
             //not too sure why every other runs function//
-        }
+         }
             var inboxCounter = document.createElement('div');
             inboxCounter.id = "counter";
             inboxCounter.innerHTML = geemails.length;
             inbox.appendChild(inboxCounter);
+
+            var newOne = getNewMessage ();
+            var newMessage = document.createElement('div');
+            newMessage.id = "message";
+            newMessage.innerHTML = newOne;
+            addnew.appendChild(newMessage);
 
 
 
@@ -77,6 +83,7 @@
 			<h1> Geemail challenge </h1>
         <div id="inbox">INBOX</div>
         <div id="mainBox"></div>
+        <div id="addnew"></div>
 		</div>
 	</body>
 </html
