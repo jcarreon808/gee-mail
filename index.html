@@ -6,13 +6,69 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+        for(var i = 0; i<geemails.length; i++) {
+			//console.log(geemails[i]);
+			console.log(geemails[i].sender);
+        	console.log(geemails[i].date);
+        	console.log(geemails[i].subject);
+        	console.log(geemails[i].body);
+
+        	var emailBox = document.createElement('div');
+        	emailBox.className = "emailcontainers";
+        	mainBox.appendChild(emailBox);
+      
+        	var senderBox = document.createElement('div');
+        	senderBox.className = "sender";
+        	senderBox.innerHTML = geemails[i].sender;
+        	emailBox.appendChild(senderBox);
+
+        	var subjectBox = document.createElement ('div');
+        	subjectBox.className = "subject";
+        	subjectBox.innerHTML = geemails[i].subject;
+        	emailBox.appendChild(subjectBox);
+
+            var dateBox = document.createElement ('div');
+            dateBox.className = "date";
+            dateBox.innerHTML = geemails[i].date;
+            emailBox.appendChild(dateBox);
+
+            var bodyBox = document.createElement ('div');
+            bodyBox.className = "body";
+            bodyBox.innerHTML = geemails[i].body;
+            emailBox.appendChild(bodyBox);
+
+            var emailElements = document.getElementsByClassName ("emailcontainers");
+
+            for (var i = 0; i < emailElements.length; i++){
+                emailElements[i].addEventListener('click', showMessage);
+            }
+
+            function showMessage(event){
+                var msg = this.querySelectorAll(".body")[0];
+                if(msg.style.display === 'none'){
+                    msg.style.display = 'block';
+                }else{
+                    msg.style.display = 'none';
+                }
+            }
+            //not too sure why every other runs function//
+
+
+
+
+
+
+        }
+
+
         
       };
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			Build Me!
+			<h1> Geemail challenge </h1>
+		<div id=mainBox></div>
 		</div>
 	</body>
-</html>
+</html
