@@ -1,0 +1,10 @@
+body {
+	background-color: green;
+}
+
+.emailcontainers{
+	border:solid black;
+}
+.body{
+	display: none;
+}
