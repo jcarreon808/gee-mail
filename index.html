@@ -36,12 +36,13 @@
             bodyBox.className = "body";
             bodyBox.innerHTML = geemails[i].body;
             emailBox.appendChild(bodyBox);
+            }
 
             var emailElements = document.getElementsByClassName ("emailcontainers");
-
+        
             for (var i = 0; i < emailElements.length; i++){
                 emailElements[i].addEventListener('click', showMessage);
-            }
+            
 
             function showMessage(event){
                 var msg = this.querySelectorAll(".body")[0];
@@ -51,14 +52,20 @@
                     msg.style.display = 'none';
                 }
             }
+
             //not too sure why every other runs function//
-
-
-
-
-
-
         }
+            var inboxCounter = document.createElement('div');
+            inboxCounter.id = "counter";
+            inboxCounter.innerHTML = geemails.length;
+            inbox.appendChild(inboxCounter);
+
+
+
+
+
+
+        
 
 
         
@@ -68,7 +75,8 @@
 	<body>
 		<div class="container" id="main">
 			<h1> Geemail challenge </h1>
-		<div id=mainBox></div>
+        <div id="inbox">INBOX</div>
+        <div id="mainBox"></div>
 		</div>
 	</body>
 </html
