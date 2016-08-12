@@ -56,7 +56,7 @@
          }
             var inboxCounter = document.createElement('div');
             inboxCounter.id = "counter";
-            inboxCounter.innerHTML = geemails.length;
+            inboxCounter.innerHTML = "Inbox " + geemails.length;
             inbox.appendChild(inboxCounter);
 
 
@@ -92,6 +92,7 @@
             bodyBox.innerHTML = newOne.body;
             emailBox.appendChild(bodyBox);
         
+    
         var emailElements = document.getElementsByClassName ("emailcontainers");
         
             for (var p = 0; p < emailElements.length; p++){
@@ -110,29 +111,35 @@
          }
             
 
+    //var inboxCounter = document.createElement('div');
+            inboxCounter.id = "counter";
+            inboxCounter.innerHTML = "Inbox " + geemails.length++;
+            inbox.appendChild(inboxCounter);
     }
             
             setInterval(datNewNew, 3000);
 
-
-
-
-
-
-
-        
-
-
-        
+         
       };
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			<h1> Geemail challenge </h1>
-        <div id="inbox">INBOX</div>
+			<div id="header"> Geemail challenge </div>
+        <div id="inbox"></div>
+        <div id="side">
+            <p>Drafts</p>
+            <p>Sent</p>
+            <p>Archive</p>
+            <p>Spam</p>
+            <p>Trash</p>
+            <p>Folders</p>   
+        </div>
+        <div id="pic"></div>
         <div id="mainBox"></div>
         <div id="addnew"></div>
+
+        </div>
 		</div>
 	</body>
 </html
