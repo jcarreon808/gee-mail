@@ -41,7 +41,7 @@
             var emailElements = document.getElementsByClassName ("emailcontainers");
         
             for (var p = 0; p < emailElements.length; p++){
-                emailElements[p].addEventListener('click', showMessage);
+                emailElements[p].addEventListener('mouseover', showMessage);
             
 
              function showMessage(event){
@@ -62,12 +62,7 @@
 
             function datNewNew(){
             var newOne = getNewMessage();
-            /*var newMessage = document.createElement('div');
-            newMessage.id = "message";
-            newMessage.innerHTML = newOne;
-             mainBox.appendChild(newMessage);*/
-
-           
+         
             var emailBox = document.createElement('div');
             emailBox.className = "emailcontainers";
             mainBox.appendChild(emailBox);
@@ -96,7 +91,7 @@
         var emailElements = document.getElementsByClassName ("emailcontainers");
         
             for (var p = 0; p < emailElements.length; p++){
-                emailElements[p].addEventListener('click', showMessage);
+                emailElements[p].addEventListener('mouseover', showMessage);
             
 
              function showMessage(event){
@@ -109,15 +104,18 @@
             }
 
          }
-            
 
-    //var inboxCounter = document.createElement('div');
-            inboxCounter.id = "counter";
-            inboxCounter.innerHTML = "Inbox " + geemails.length++;
-            inbox.appendChild(inboxCounter);
+            var counts = document.getElementById('inbox');
+            counts.innerHTML = "Inbox " + geemails.length++;
+            //inboxCounter.id = "counter";
+            //inboxCounter.innerHTML = "Inbox " + geemails.length++;
+            //inbox.appendChild(inboxCounter);
     }
             
             setInterval(datNewNew, 3000);
+
+  
+
 
          
       };
@@ -128,15 +126,24 @@
 			<div id="header"> Geemail challenge </div>
         <div id="inbox"></div>
         <div id="side">
-            <p>Drafts</p>
+            <p id="draft">Drafts</p>
             <p>Sent</p>
             <p>Archive</p>
             <p>Spam</p>
             <p>Trash</p>
             <p>Folders</p>   
         </div>
-        <div id="pic"></div>
-        <div id="mainBox"></div>
+        <div id="pic">
+            <img src ="http://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Coding-Html-icon.png" style="width:225px;height:225px;">
+            <img src="https://www.planet-source-code.com/vb/2010Redesign/images/LangugeHomePages/HTML5_CSS_JavaScript.png" style="width:225px;height:225px;">
+            <img src="http://www.devleague.com/img/dev_league_emblem.png" style="width:225px;height:225px;">
+        </div>
+        <div id="mainBox">
+            <div id="bar">
+                <a href="https://www.devleague.com">Want to become a coder?<span>Sign up TODAY: Devleague!</span>
+                </a>
+            </div>
+        </div>
         <div id="addnew"></div>
 
         </div>
