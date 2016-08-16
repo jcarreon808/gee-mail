@@ -4,45 +4,45 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        for(var i = 0; i<geemails.length; i++) {
-			//console.log(geemails[i]);
-			console.log(geemails[i].sender);
-        	console.log(geemails[i].date);
-        	console.log(geemails[i].subject);
-        	console.log(geemails[i].body);
+        
+        for(var i = 0; i<geemails.length; i++) { //created for loop to iterate through array of objects
+			// console.log(geemails[i]); console log array to see what kind of data was stored inside
+			console.log(geemails[i].sender);//console log sender property 
+        	console.log(geemails[i].date);//console log date property
+        	console.log(geemails[i].subject);//console log subject property
+        	console.log(geemails[i].body);//console log body property
 
-        	var emailBox = document.createElement('div');
-        	emailBox.className = "emailcontainers";
-        	mainBox.appendChild(emailBox);
-      
-        	var senderBox = document.createElement('div');
-        	senderBox.className = "sender";
-        	senderBox.innerHTML = geemails[i].sender;
-        	emailBox.appendChild(senderBox);
+        	var emailBox = document.createElement('div');//created new element 'div' 
+        	emailBox.className = "emailcontainers";//gave element class name of 'emailcontainers'
+        	mainBox.appendChild(emailBox);//attached this div to the id of mainBox
 
-        	var subjectBox = document.createElement ('div');
-        	subjectBox.className = "subject";
-        	subjectBox.innerHTML = geemails[i].subject;
-        	emailBox.appendChild(subjectBox);
+        	var senderBox = document.createElement('div');//created new element using DOM to store sender data
+        	senderBox.className = "sender";//gave element class name of sender
+        	senderBox.innerHTML = geemails[i].sender;// stored sender property of the geemail object into senderBox div
+        	emailBox.appendChild(senderBox);//attach this div to main div emailBox
 
-            var dateBox = document.createElement ('div');
-            dateBox.className = "date";
-            dateBox.innerHTML = geemails[i].date;
-            emailBox.appendChild(dateBox);
+        	var subjectBox = document.createElement ('div');//created another div named subjectBox
+        	subjectBox.className = "subject";//gave element class name of subject
+        	subjectBox.innerHTML = geemails[i].subject;//stored subject property of geemail object into this div
+        	emailBox.appendChild(subjectBox);//attached new div to emailBox
 
-            var bodyBox = document.createElement ('div');
-            bodyBox.className = "body";
-            bodyBox.innerHTML = geemails[i].body;
-            emailBox.appendChild(bodyBox);
+            var dateBox = document.createElement ('div');//create new element using DOM to store date data
+            dateBox.className = "date";//gave element class name of date
+            dateBox.innerHTML = geemails[i].date;//stored date property of geemail object in this div
+            emailBox.appendChild(dateBox);//attach this div to emailBox
+
+            var bodyBox = document.createElement ('div');//create new element using DOM to store body data
+            bodyBox.className = "body";//gave element class name body
+            bodyBox.innerHTML = geemails[i].body;//stored body property of geemail boject into bodyBox div
+            emailBox.appendChild(bodyBox);//attach this div to emailBox
             }
 
             var emailElements = document.getElementsByClassName ("emailcontainers");
-        
+        //created variabled 'emailElements' and used emailcontainer class since element already created
+
             for (var p = 0; p < emailElements.length; p++){
                 emailElements[p].addEventListener('mouseover', showMessage);
-            
+         //for loop to iterate through each object again adding mouseover event
 
              function showMessage(event){
                 var msg = this.querySelectorAll(".body")[0];
@@ -53,53 +53,55 @@
                 }
             }
 
-         }
-            var inboxCounter = document.createElement('div');
-            inboxCounter.id = "counter";
-            inboxCounter.innerHTML = "Inbox " + geemails.length;
-            inbox.appendChild(inboxCounter);
+         }//create function to allow message to open and close when mouse over using an if/else statement. Set display to none so when mouse hovers over, the msg will display and vice versa
+
+            var inboxCounter = document.createElement('div');//create new element for inbox count
+            inboxCounter.id = "counter";// dive new div id name of counter
+            inboxCounter.innerHTML = "Inbox " + geemails.length;//store length of array into new div 
+            inbox.appendChild(inboxCounter);//attach this to div id named inbox
 
 
             function datNewNew(){
-            var newOne = getNewMessage();
-         
-            var emailBox = document.createElement('div');
-            emailBox.className = "emailcontainers";
-            mainBox.appendChild(emailBox);
+            var newOne = getNewMessage();//stored getNewMessage function into variable named newOne
+        
+            var emailBox = document.createElement('div');//created new element 'div'
+            emailBox.className = "emailcontainers";//gave it class name of 'emailcontainers'
+            mainBox.appendChild(emailBox);//attached this div id name mainBox
       
-            var senderBox = document.createElement('div');
-            senderBox.className = "sender";
-            senderBox.innerHTML = newOne.sender;
-            emailBox.appendChild(senderBox);
+            var senderBox = document.createElement('div');//created new element 'div'
+            senderBox.className = "sender";//gave element class name sender
+            senderBox.innerHTML = newOne.sender;//stored sender property of object into div
+            emailBox.appendChild(senderBox);//attached this div to main div emailBox
 
-            var subjectBox = document.createElement ('div');
-            subjectBox.className = "subject";
-            subjectBox.innerHTML = newOne.subject;
-            emailBox.appendChild(subjectBox);
+            var subjectBox = document.createElement ('div');//created new element 'div'
+            subjectBox.className = "subject";//gave it class name of subject
+            subjectBox.innerHTML = newOne.subject;//stored subject property of object into div
+            emailBox.appendChild(subjectBox);//this div to main div emailBox
 
-            var dateBox = document.createElement ('div');
-            dateBox.className = "date";
-            dateBox.innerHTML = newOne.date;
-            emailBox.appendChild(dateBox);
+            var dateBox = document.createElement ('div');//create new element 'div'
+            dateBox.className = "date";//gave it class name  of date
+            dateBox.innerHTML = newOne.date;//store date property of object into div
+            emailBox.appendChild(dateBox);//attach this div to main div emailBox
 
-            var bodyBox = document.createElement ('div');
-            bodyBox.className = "body";
-            bodyBox.innerHTML = newOne.body;
-            emailBox.appendChild(bodyBox);
+            var bodyBox = document.createElement ('div');//create new element 'div'
+            bodyBox.className = "body";//gave it class name of body
+            bodyBox.innerHTML = newOne.body;//store body property of object into div
+            emailBox.appendChild(bodyBox);//attach this div to main div emailBox
         
     
         var emailElements = document.getElementsByClassName ("emailcontainers");
-        
+        //used exisiting class 'emailcontainers' 
+
             for (var p = 0; p < emailElements.length; p++){
                 emailElements[p].addEventListener('mouseover', showMessage);
-            
+            //needed to make another mouseover event for new messages being generated and also loop through them
 
              function showMessage(event){
                 var msg = this.querySelectorAll(".body")[0];
                 if(msg.style.display === 'none'){
                     msg.style.display = 'block';
                 }else{
-                    msg.style.display = 'none';
+                    msg.style.display = 'none';//created function to allow mouseover event for new messages generated
                 }
             }
 
@@ -107,12 +109,10 @@
 
             var counts = document.getElementById('inbox');
             counts.innerHTML = "Inbox " + geemails.length++;
-            //inboxCounter.id = "counter";
-            //inboxCounter.innerHTML = "Inbox " + geemails.length++;
-            //inbox.appendChild(inboxCounter);
+           //used existing id 'inbox' to keep count of new emails coming through 
     }
             
-            setInterval(datNewNew, 3000);
+            setInterval(datNewNew, 3000);//set time for function to generate new message(3 sec)
 
   
 
@@ -123,10 +123,10 @@
 	</head>
 	<body>
 		<div class="container" id="main">
-			<div id="header"> Geemail challenge </div>
+			<div id="header"> JP's Geemail challenge </div>
         <div id="inbox"></div>
         <div id="side">
-            <p id="draft">Drafts</p>
+            <p>Drafts</p>
             <p>Sent</p>
             <p>Archive</p>
             <p>Spam</p>
@@ -140,7 +140,7 @@
         </div>
         <div id="mainBox">
             <div id="bar">
-                <a href="https://www.devleague.com">Want to become a coder?<span>Sign up TODAY: Devleague!</span>
+                <a href="http://www.devleague.com">Want to become a coder?<span>Sign up TODAY: Devleague!</span>
                 </a>
             </div>
         </div>
