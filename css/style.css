@@ -1,8 +1,7 @@
 div{
 	border-radius: 5px;
-
-
 }
+
 body {
 	background-color: #fff2e6;
 }
@@ -55,6 +54,7 @@ body {
 	margin-bottom: 10px;
 	text-align: center;
 }
+
 #bar{
 	
 	border-radius: 5px;
@@ -70,13 +70,23 @@ body {
 	height: 1px;
 	width: 1px;
 } 
+
 span {
 	font-weight: bold;
 	font-size: 20px;
 }
+
 a {
 	text-decoration: none;
 	color: #3D59AB;
 	font-size: 50px;
 	font-family: Verdana, sans-serif
+}
+
+p:hover{
+	background-color: #ffd1b3;
+}
+
+a:hover{
+	background-color:#ffb3b3;
 }
